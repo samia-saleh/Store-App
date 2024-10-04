@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import {Almarai} from "next/font/google"
+import Navbar from "./layotComponant/navbar";
+
+const almarai=Almarai({subsets:["arabic"],weight:["300","400","700","800"]})
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,8 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  ${almarai.className}`}
       >
+        <Navbar></Navbar>
         {children}
       </body>
     </html>
